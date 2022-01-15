@@ -1020,7 +1020,7 @@ class GraphHandler(object):
         name_value_map = {}
         filter_name_value_map = {}
         filter_non_attr_map = {}
-        for inst_name in tqdm(sorted(inst_names)):
+        for inst_name in sorted(inst_names):
             # print(inst_name)
             # b. 提取跟指令相关的TRG子图 relation_trg
             relation_record_names = self.relation_g.get_relation_record_names(inst_name)
