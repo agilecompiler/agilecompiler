@@ -24,7 +24,7 @@ In order to facilitate testing, separate the part from original td files that ca
 ### 2. Generate code and recompile llvm with them.
 ```bash
 # clone these project on $ATC_CODE_ROOT$, download llvm in $LLVM_ROOT$
-git clone xxx
+git clone https://github.com/agilecompiler/agilecompiler.git
 cd $ATC_CODE_ROOT$/atc-coding
 
 # tuning on ideal pw and match insts based on similarity 
