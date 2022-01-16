@@ -19,7 +19,7 @@ list of code-layout templates synthesized. The first stage can often be reused b
 
 ## How to run?
 ### 1. Prepare llvm for compiling
-In order to facilitate testing, separate the part from original td files that can be generated. Or use [our separated version](https://github.com/agilecompiler/agilecompiler/blob/master/RISCV.rar) to replace the original RISCV backend.
+In order to facilitate testing, separate the part from original td files that can be generated. Or use [our separated version](doc/seperated_code) to replace the original RISCV backend.
 
 ### 2. Generate code and recompile llvm with them.
 ```bash
