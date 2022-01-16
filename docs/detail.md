@@ -5,7 +5,7 @@ generate files in languages except TableGen. Efforts aiming at C or C++ code are
 a more comprehensive target support. Moreover, further efforts about extending ATG to a wider scope such
 as the instruction scheduling in the compiler are undergoing. Currently, the evaluation of ATG still depends
 on the available LLVM infrastructure such as instruction selection, and instruction emission. Therefore, ATG does not support
-customized instructions with complex mode or properties(such as pattern, immediate operand def) due to lack of relevant knowledge from existing
+customized instructions with complex mode or properties(such as pattern, operand def) due to lack of relevant knowledge from existing
 ISAs. However, this more intellectual auto-designing approach is hopeful to further lower the threshold for
 compiler development fundamentally. 
 
