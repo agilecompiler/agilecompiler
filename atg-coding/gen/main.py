@@ -1,6 +1,7 @@
 from gen.input_reader import read_input_data
 from gen.transform import input_transform
-from gen.tmplate import CommonTemplate, MyInstTemplate, FMTemplate, TFFlagTemplate, EndTemplate, TypeFormatTemplate
+from gen.tmplate import CommonTemplate, MyInstTemplate, FMTemplate, \
+    TFFlagTemplate, EndTemplate, TypeFormatTemplate, DependenceTemplate
 
 
 class AuxTemplate(object):
@@ -9,6 +10,7 @@ class AuxTemplate(object):
         self.myinst_template = MyInstTemplate('ATGInst')
         self.fm_template = FMTemplate()
         self.tfflag_template = TFFlagTemplate()
+        self.dep_template = DependenceTemplate()
         self.type_format_template = TypeFormatTemplate()
         self.end_template = EndTemplate()
 
@@ -19,6 +21,7 @@ class AuxTemplate(object):
         code.append(myinst_class)
         tfflag_class = self.tfflag_template.gen_class()
         code.append(tfflag_class)
+        code.append(self.dep_template.gen_class())
         code.append(self.type_format_template.gen_class())
         return code
 

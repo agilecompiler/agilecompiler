@@ -254,6 +254,32 @@ class TFFlagTemplate(Template):
         return f"{self.name}<{self.gen_call_arg_list(data)}>"
 
 
+class DependenceTemplate(Template):
+    def __init__(self, name='DepTemplate', args_dict=OrderedDict()):
+        super(DependenceTemplate, self).__init__(name, args_dict)
+
+    def gen_class(self):
+        code = """
+def addr :
+  ComplexPattern<iPTR, 2, "selectIntAddr", [frameindex]>;
+
+def addrRegImm :
+  ComplexPattern<iPTR, 2, "selectAddrRegImm", [frameindex]>;
+
+def addrDefault :
+  ComplexPattern<iPTR, 2, "selectAddrDefault", [frameindex]>;
+
+def addrimm10 : ComplexPattern<iPTR, 2, "selectIntAddrSImm10", [frameindex]>;
+def addrimm10lsl1 : ComplexPattern<iPTR, 2, "selectIntAddrSImm10Lsl1",
+                                   [frameindex]>;
+def addrimm10lsl2 : ComplexPattern<iPTR, 2, "selectIntAddrSImm10Lsl2",
+                                   [frameindex]>;
+def addrimm10lsl3 : ComplexPattern<iPTR, 2, "selectIntAddrSImm10Lsl3",
+                                   [frameindex]>;
+                  """
+        return code
+
+
 class TypeFormatTemplate(Template):
     def __init__(self, name="Type_AUX_FM", args_dict=OrderedDict()):
         super(TypeFormatTemplate, self).__init__(name, args_dict)
