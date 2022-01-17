@@ -40,7 +40,6 @@ cd $ATC_CODE_ROOT$/atc-coding
 python atc-coding/gen_atg/main.py
 
 # Replace the original td files with the generated td files and recompile llvm.
-cp output/inst_set/*.td $LLVM_ROOT$/llvm/lib/Target/RISCV/gen/
 cd $LLVM_ROOT$ && mkdir build && cd build
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Debug" -DBUILD_SHARED_LIBS=True -DLLVM_USE_SPLIT_DWARF=True \
     -DLLVM_OPTIMIZED_TABLEGEN=True -DLLVM_BUILD_TESTS=False -DLLVM_DEFAULT_TARGET_TRIPLE="riscv64-unknown-elf" \
